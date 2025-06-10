@@ -1,4 +1,4 @@
-- 👋 Hello, I’m @gavinblanusa
+👋 Hello, I’m @gavinblanusa
 
 I’m interested in data, statistics, economics, machine learning, and math. I use my passion for numbers to fuel my drive and curiosity for data and 
 statistics within the fields of Finance, Economics, Sports, Health and the Stock Market.
