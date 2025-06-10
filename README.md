@@ -3,7 +3,7 @@
 I’m interested in data, statistics, economics, machine learning, and math. I use my passion for numbers to fuel my drive and curiosity for data and 
 statistics within the fields of Finance, Economics, Sports, Health and the Stock Market.
 
-My current position is a data analyst for Cruiter.ai - an automated tech sourcing startup located in San Francisco. I will have worked there for 7 months now, I 
+My fromer position is a data analyst for Cruiter.ai - an automated tech sourcing startup located in San Francisco. I will have worked there for 7 months, I 
 have learned a great deal in my data analysis and data manipulation skills. As Cruiter.ai is a startup, I get thrown on many different projects with other coworkers.
 The founder and CEO has had me go to Tech events in San Francisco to learn and research about cutting edge tech in the startup space and apply my research to 
 Cruiter.ai, this includes, RAG, AWS, ElasticSearch, AI, Snowflake, etc.
