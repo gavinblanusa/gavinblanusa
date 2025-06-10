@@ -17,7 +17,7 @@ I am currently purusing a 4 year degree in Economics with an emphasis on mathema
 and also vast enough to pursue different directions.
 
 
-Feel free to reach me at my email gavinblanusa@comcast.net or my phone number 707-509-9137.
+Feel free to reach me at my email gavinblanusa@comcast.net.
 
 Also, if you are on X/Twitter and enjoy sports or basketball, feel free to give my passion project a follow or a like @SwishStatistics. I use as an outlet to scratch
 my natural curiosity of numbers and Sports, as well as to grow my data skills. I have learned a lot about Python visiualizations, referecning APIs, as well as 
