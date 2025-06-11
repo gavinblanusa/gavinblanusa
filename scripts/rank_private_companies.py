@@ -2,7 +2,9 @@
 
 This script loads ``companies.csv`` and calculates a composite score for
 ranking. The score is a weighted combination of valuation, revenue, and
-employee count. It outputs the top 100 companies to ``stdout``.
+employee count. Metrics are normalized so that a company with a large
+valuation does not overwhelm other factors. The script prints the top 100
+companies to ``stdout``.
 """
 
 from __future__ import annotations
@@ -36,23 +38,39 @@ def load_companies() -> List[Dict[str, float]]:
     return companies
 
 
-def compute_score(company: Dict[str, float]) -> float:
-    """Compute weighted score for a company."""
+def compute_score(company: Dict[str, float], max_values: Dict[str, float]) -> float:
+    """Compute weighted score for a company using normalized metrics."""
     score = 0.0
     for field, weight in WEIGHTS.items():
-        score += company.get(field, 0) * weight
+        max_v = max_values.get(field) or 1
+        score += (company.get(field, 0) / max_v) * weight
     return score
 
 
-def rank_companies(companies: List[Dict[str, float]]) -> List[Dict[str, float]]:
-    """Return companies sorted by composite score descending."""
-    return sorted(companies, key=compute_score, reverse=True)
+def rank_companies(companies: List[Dict[str, float]]) -> (List[Dict[str, float]], Dict[str, float]):
+    """Return companies sorted by composite score descending and max values."""
+    if not companies:
+        return [], {field: 1 for field in WEIGHTS}
+
+    max_values = {
+        field: max((c.get(field, 0) for c in companies), default=0) or 1
+        for field in WEIGHTS
+    }
+    ranked = sorted(
+        companies,
+        key=lambda c: compute_score(c, max_values),
+        reverse=True,
+    )
+    return ranked, max_values
 
 
 if __name__ == "__main__":
     companies = load_companies()
-    ranked = rank_companies(companies)[:100]
-    for i, c in enumerate(ranked, start=1):
-        score = compute_score(c)
+    ranked, max_vals = rank_companies(companies)
+    top_100 = ranked[:100]
+    if not top_100:
+        print("No company data available")
+    for i, c in enumerate(top_100, start=1):
+        score = compute_score(c, max_vals)
         print(f"{i}. {c['company']} - score: {score:.2f}")
 

@@ -40,3 +40,11 @@ The file includes columns for valuation, number of employees, and revenue. A
 second script, `scripts/rank_private_companies.py`, reads that data and computes
 a weighted score to identify the top 100 companies according to these metrics.
 
+### Disclaimer
+
+This project is solely for research and educational purposes. The dataset
+contains example values and may not represent current or complete financial
+information. Nothing in this repository constitutes financial advice or an
+offer to create a tradable ETF. Use the code and data here at your own risk.
+
+
