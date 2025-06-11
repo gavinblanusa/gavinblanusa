@@ -7,7 +7,6 @@ so check the terms of service of any API or website you use.
 
 from __future__ import annotations
 import csv
-import json
 from pathlib import Path
 from typing import Iterable, Dict
 
