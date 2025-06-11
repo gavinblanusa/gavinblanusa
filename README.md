@@ -27,3 +27,15 @@ building out a very extensive relational MYSQL database. Hope you enjoy!!
 gavinblanusa/gavinblanusa is a ✨ special ✨ repository because its `README.md` (this file) appears on your GitHub profile.
 You can click the Preview link to take a look at your changes.
 --->
+
+## Private Company ETF Data Project
+
+This repository now includes example scripts and a placeholder dataset for
+researching an ETF composed of top private companies. The
+`scripts/collect_private_company_data.py` script demonstrates how you might pull
+valuation data and other metrics from an external API (you would need to provide
+a real data source). Collected data is stored in `data/companies.csv`.
+
+The file includes columns for valuation, number of employees, and revenue. A
+second script, `scripts/rank_private_companies.py`, reads that data and computes
+a weighted score to identify the top 100 companies according to these metrics.
