@@ -39,7 +39,7 @@ def fetch_company_data(company: str) -> Dict[str, str]:
 
 def update_company_csv(rows: Iterable[Dict[str, str]]) -> None:
     """Append rows to the company CSV file."""
-    header = ["company", "valuation_usd_millions"]
+    header = ["company", "valuation_usd_millions", "employees", "revenue_usd_millions"]
     COMPANY_CSV.parent.mkdir(exist_ok=True)
     exists = COMPANY_CSV.exists()
     with COMPANY_CSV.open("a", newline="") as csvfile:
@@ -56,6 +56,8 @@ def main(companies: Iterable[str]) -> None:
         collected.append({
             "company": company,
             "valuation_usd_millions": data.get("valuation"),
+            "employees": data.get("employees"),
+            "revenue_usd_millions": data.get("revenue"),
         })
 
     update_company_csv(collected)
