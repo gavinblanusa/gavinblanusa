@@ -38,7 +38,8 @@ a real data source). Collected data is stored in `data/companies.csv`.
 
 The file includes columns for valuation, number of employees, and revenue. A
 second script, `scripts/rank_private_companies.py`, reads that data and computes
-a weighted score to identify the top 100 companies according to these metrics.
+a weighted score using z-score normalization to identify the top 100 companies
+according to these metrics.
 
 ### Disclaimer
 
